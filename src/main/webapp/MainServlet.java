@@ -9,18 +9,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name = "InitServlet", value = "/hello")
+@WebServlet(name = "InitServlet", value = "/testServlets/hello")
 public class MainServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.setContentType("text/html");
-//        PrintWriter printWriter = resp.getWriter();
-//        printWriter.write("Hello!");
-//        printWriter.close();
-
-        resp.setStatus(301);
-        resp.sendRedirect("/index.jsp");
+        resp.setContentType("text/html");
+        PrintWriter printWriter = resp.getWriter();
+        printWriter.write("Hello!");
+        printWriter.close();
 
     }
 }
